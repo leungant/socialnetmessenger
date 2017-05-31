@@ -1,0 +1,13 @@
+{
+	"usera": [
+	  {"from": "usera", "to": "user", "dt": "20160205", "msg": "hello"},
+	  {"from": "user", "to": "usera", "dt": "20160206", "msg": "hi there"},
+	  {"from": "usera", "to": "user", "dt": "20160207", "msg": "gooday"}
+	],
+
+	"userb": [
+	  {"from": "user", "to": "userb", "dt": "20160205", "msg": "hello"},
+	  {"from": "userb", "to": "user", "dt": "20160206", "msg": "hi there"},
+	  {"from": "user", "to": "userb", "dt": "20160207", "msg": "goodays"}
+	]
+}

@@ -1,0 +1,51 @@
+<html>
+
+<script src="https://unpkg.com/angular@1.5.0/angular.min.js"> </script>
+<script src="https://unpkg.com/jquery@3.2.1"> </script>
+
+<script>
+angular.module('erehwonChattApp', []).controller('UserListCtrl', function UserListCtrl() {
+  this.erehwonchatt = {
+    name: 'name'
+  };
+});
+var myApp = angular.module('myApp',[]);
+
+myApp.controller('erehwonChatController', ['$scope', '$http', function($scope, $http) {
+  $scope.greeting = 'Hola!';
+  $scope.users = ['a','b','c'];
+  $http.get('contacts.json').then(function (response) { $scope.users = response.data
+                                                        console.log(response.data) })
+
+  $scope.openChat = function (data) 
+                    {
+    					console.log('openchat clikced + ' + data.name)
+    					// console.log('openchat clikced + ' + $scope.$eval(username))
+    					$('#content').append("<div> asdf " + data.name + "</div>" );
+    				}
+}]);
+
+</script>
+
+<script>
+
+</script>
+<body ng-app=myApp>
+<div id=content>
+<div ng-controller="erehwonChatController">
+<div ng-repeat="x in users">
+  User: {{ x.name }} Status: {{ x.status }} <a ng-href='#here' ng-click="openChat('x.name')">	 Talk </a>
+  User: {{ x.name }} Status: {{ x.status }} <a ng-href='#here' ng-click="openChat({{x.name}})">	 Talk </a>
+  User: {{ x.name }} Status: {{ x.status }} <a ng-href='#here' ng-click="openChat(x)">	 Talk </a>
+  </div>
+<div> 
+ <p ng-model=greeting>
+   users go here
+ </p>
+ {{ name }}
+</div>
+
+</div>
+</div>
+</body>
+</html>
